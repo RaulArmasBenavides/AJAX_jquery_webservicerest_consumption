@@ -13,3 +13,27 @@ https://dog.ceo/api/breeds/list/all
 Result: 
 
 ![image](https://user-images.githubusercontent.com/20383126/133571850-2d6c5a42-16aa-4e4d-b601-d765570c45f9.png)
+
+
+
+
+//esta es una forma definir un método en JS 
+
+function saludar()
+{
+    console.log('Hola gente');
+}
+
+saludar();
+//funcion sumar 
+function sumar( a,b,c)
+{
+    return a + b + c;
+}
+//función flecha 
+const sumar = (a,b,c) => {
+    return a + b + c; 
+}
+console.log(sumar((2,5)));
+// una funcion de flechas se puede resumir cuando solo se tiene una línea
+//const sumar = (a,b) => return a + b; 
