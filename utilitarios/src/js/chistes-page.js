@@ -1,4 +1,4 @@
- 
+export const URL_JOKES = "https://api.chucknorris.io/jokes/random";
 const body = document.body;
 
 //crea el html de manera dinámica

@@ -11,13 +11,18 @@ let ShowRandomImagesDogs = function() {
        url: scriptUrl,
        type: 'get',
        dataType: 'json',
-       async: false,
+       async: true,
        success: function(data) {
            result = data.url;
-           console.log(data);
+           console.log(result);
+        var dogsimgcontainer = document.getElementById('dogsimgcontainer');
+        var imgdog=document.createElement('img'); 
+        imgdog.setAttribute("src",result); 
+        dogsimgcontainer.appendChild(imgdog);
+   
        } 
     });
-    return result;
+  
 }
 
 
@@ -29,13 +34,17 @@ let ShowRandomImagesCats = function() {
        url: scriptUrl,
        type: 'get',
        dataType: 'json',
-       async: false,
+       async: true,
        success: function(data) {
            result = data[0]['url'];
            console.log(result);
+           var contenedor = document.getElementById('contenedorcats');
+           var img=document.createElement('img'); 
+           img.setAttribute("src",result); 
+            contenedor.appendChild(img);
        } 
     });
-    return result;
+ 
 }
 
 

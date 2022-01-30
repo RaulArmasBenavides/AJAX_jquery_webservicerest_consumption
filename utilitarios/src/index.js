@@ -8,21 +8,6 @@ createSelectPicker(FilterBodegaEN,listaPalavras,[],true);
 
 //Utils.createSelectPicker(FilterBodegaEN, listaPalavras, [], true);
 
-let _listtbreeds = ListallBreedsDogs('australian');
-
-
-
-
-let _pathimgcat = ShowRandomImagesCats();
-var contenedor = document.getElementById('contenedorcats');
-var img=document.createElement('img'); 
-img.setAttribute("src",_pathimgcat); 
-contenedor.appendChild(img);
-
-
-
-let _pathimgdog = ShowRandomImagesDogs();
-var dogsimgcontainer = document.getElementById('dogsimgcontainer');
-var imgdog=document.createElement('img'); 
-imgdog.setAttribute("src",_pathimgdog); 
-dogsimgcontainer.appendChild(imgdog);
+ListallBreedsDogs('australian');
+ShowRandomImagesCats();
+ShowRandomImagesDogs();

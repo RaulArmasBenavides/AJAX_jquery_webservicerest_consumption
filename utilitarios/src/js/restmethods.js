@@ -8,8 +8,27 @@ let ListallBreedsDogs = (familia) => {
   let lista_aux = []; // nueva instancia
   $.get(actions.URL_DOGS, function(data) {
       lista_aux.push(data.message[familia]);
-    });
 
+      for (const key in data.message) {
+        if (data.message.hasOwnProperty(key)) {
+          const option = document.createElement('option');
+          option.value = key;
+          option.innerHTML = key;
+          
+          select.appendChild(option);        
+        }
+      }
+  
+      for (const key in data.message) 
+      {
+          if (data.message.hasOwnProperty(key)) 
+          {
+              var items = "<tr><td>" + key + "</td><td>";
+              $('table').append(items);
+          }
+      }
+    });
+  
     return lista_aux;
 }
 
