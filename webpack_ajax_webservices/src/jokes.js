@@ -1,6 +1,6 @@
+import * as constantes from '.././constants';
 require('jquery');
- console.log("hola");
-const URL_JOKES = "https://api.chucknorris.io/jokes/random";
+console.log("hola");
 
 // export const saludar = ( nombre ) => {
 
@@ -34,7 +34,7 @@ const crearChistesHtml = () =>
 
 const  obtenerChiste = async() => 
 {
-    const resp = await fetch(URL_JOKES);
+    const resp = await fetch(constantes.URL_JOKES);
     console.log(resp);
     if(!resp.ok) throw alert('No se pudo realizar la petición');
     
@@ -74,3 +74,7 @@ const eventos = () => {
 
 crearChistesHtml();
 eventos();
+// export{
+//     crearChistesHtml,
+//     eventos,
+//  }

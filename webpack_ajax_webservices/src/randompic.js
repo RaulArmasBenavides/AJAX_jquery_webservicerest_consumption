@@ -1,20 +1,20 @@
 require('jquery');
-import * as actions from './constants'
  
 
+import * as constantes from '.././constants';
+ 
  
 //API dogs 
 let ShowRandomImagesDogs = function() {
     var result = "";
-    var scriptUrl = actions.URL_IMG_DOGS;
+    var scriptUrl = constantes.URL_IMG_DOGS;
     $.ajax({
        url: scriptUrl,
        type: 'get',
        dataType: 'json',
        async: true,
        success: function(data) {
-           result = data.url;
-           console.log(result);
+        result = data.url;
         var dogsimgcontainer = document.getElementById('dogsimgcontainer');
         var imgdog=document.createElement('img'); 
         imgdog.setAttribute("src",result); 
@@ -29,7 +29,7 @@ let ShowRandomImagesDogs = function() {
 //API cats 
 let ShowRandomImagesCats = function() {
     var result = "";
-    var scriptUrl = actions.URL_IMG_CATS;
+    var scriptUrl = constantes.URL_IMG_CATS;
     $.ajax({
        url: scriptUrl,
        type: 'get',
@@ -37,7 +37,6 @@ let ShowRandomImagesCats = function() {
        async: true,
        success: function(data) {
            result = data[0]['url'];
-           console.log(result);
            var contenedor = document.getElementById('contenedorcats');
            var img=document.createElement('img'); 
            img.setAttribute("src",result); 
@@ -46,9 +45,9 @@ let ShowRandomImagesCats = function() {
     });
  
 }
-
-
-export{
-    ShowRandomImagesDogs,
-    ShowRandomImagesCats,
-}
+ShowRandomImagesDogs();
+ShowRandomImagesCats();
+// export{
+//    ShowRandomImagesDogs,
+//    ShowRandomImagesCats,
+// }

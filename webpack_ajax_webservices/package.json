@@ -1,0 +1,28 @@
+{
+  "name": "webpack_ajax_webservices",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "webpack-dev-server --open",
+    "start": "webpack serve",
+    "build": "webpack --config webpack.config.js"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "author": "Raul Armas Benavides",
+  "dependencies": {
+    "expose-loader": "^3.1.0",
+    "html-loader": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jquery": "^3.6.0",
+    "webpack": "^5.67.0"
+  },
+  "devDependencies": {
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "mini-css-extract-plugin": "^2.5.3",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.3"
+  }
+}

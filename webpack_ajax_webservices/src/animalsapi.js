@@ -1,5 +1,5 @@
 require('jquery');
-import * as actions from './constants'
+import * as constantes from '.././constants';
 
 
 //función asíncrona que devuelve una lista de arreglos (familias y razas de perros )
