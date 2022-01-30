@@ -1,26 +1,32 @@
-const HtmlWebPackPlugin       = require('html-webpack-plugin'); 
 const MiniCssExtractPlugin    = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MinifyPlugin            = require('babel-minify-webpack-plugin');
 const webpack = require('webpack'); 
+const path = require("path"),
+  HtmlWebpackPlugin = require("html-webpack-plugin");
 //const compiler = require('webpack');
 
+const pages = ["jokes"];
 
 module.exports = {
     mode: 'development',
+    entry: pages.reduce((config, page) => {
+        config[page] = `./src/${page}.js`;
+        return config;
+      }, {}),
+      output: {
+        filename: "[name].js",
+        path: path.resolve(__dirname, "dist"),
+      },
     optimization: {
-    minimizer: [ new OptimizeCssAssetsPlugin() ]
+    minimizer: [ new OptimizeCssAssetsPlugin()],
+      splitChunks: {
+      chunks: "all",
+    },
     },
     module: {
         rules: [
-            { 
-                test: /\.js$/, 
-                exclude: /node_modules/, 
-                use: [
-                    'babel-loader'
-                ]
-            },
             {
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader"],
@@ -31,13 +37,6 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     'css-loader'
                 ]
-            },
-            {
-                test: /\.html$/i,
-                loader: 'html-loader',
-                options: {
-                sources: false,                    
-                },    
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
@@ -66,7 +65,7 @@ module.exports = {
                   ]
                 },
     plugins: [
-        new HtmlWebPackPlugin({
+        new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: './index.html'
         }),
@@ -83,7 +82,17 @@ module.exports = {
             jQuery: require.resolve('jquery')
         }),
         new MinifyPlugin(),
-    ]
+    ].concat(
+        pages.map(
+          (page) =>
+            new HtmlWebpackPlugin({
+              inject: true,
+              template: `./${page}.html`,
+              filename: `${page}.html`,
+              chunks: [page],
+            })
+        )
+      ),
 
 }
 

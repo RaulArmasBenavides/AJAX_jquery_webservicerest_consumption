@@ -1,3 +1,5 @@
+require('jquery');
+ console.log("hola");
 const URL_JOKES = "https://api.chucknorris.io/jokes/random";
 
 // export const saludar = ( nombre ) => {
