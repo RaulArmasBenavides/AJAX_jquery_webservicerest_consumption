@@ -1,2 +1,2 @@
-# AJAX_jquery_webservicerest_consumption
-rest api consumption example using AJAX
+# AJAX_jquery_webservicerest_webpack
+samples consuming restful web services example using AJAX in webpack
