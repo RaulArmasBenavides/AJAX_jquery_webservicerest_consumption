@@ -10,19 +10,19 @@
   "keywords": [],
   "author": "Raul Armas Benavides",
   "dependencies": {
-    "expose-loader": "^3.1.0",
-    "html-loader": "^3.1.0",
+    "expose-loader": "^4.0.0",
+    "html-loader": "^3.1.2",
     "html-webpack-plugin": "^5.5.0",
     "jquery": "^3.6.0",
-    "webpack": "^5.67.0"
+    "webpack": "^5.73.0"
   },
   "devDependencies": {
     "babel-minify-webpack-plugin": "^0.3.1",
     "clean-webpack-plugin": "^4.0.0",
-    "mini-css-extract-plugin": "^2.5.3",
+    "mini-css-extract-plugin": "^2.6.1",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "webpack-bundle-analyzer": "^4.5.0",
-    "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.7.3"
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
   }
 }
